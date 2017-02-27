@@ -30,7 +30,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         pageData = dateFormatter.monthSymbols
         
         let tweetDataSource = TwitterModel()
-        tweetDataSource.getTweetByScreenName(screenName: "realDonaldTrump")
+//        tweetDataSource.getTweetByScreenName(screenName: "realDonaldTrump")
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
