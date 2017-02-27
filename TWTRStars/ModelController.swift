@@ -28,6 +28,9 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Create the data model.
         let dateFormatter = DateFormatter()
         pageData = dateFormatter.monthSymbols
+        
+        let tweetDataSource = TwitterModel()
+        tweetDataSource.getTweetByScreenName(screenName: "realDonaldTrump")
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
