@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0109861A1E64AC7700092A7A /* TwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010986191E64AC7700092A7A /* TwitterModel.swift */; };
 		0109861E1E64B5EA00092A7A /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0109861D1E64B5EA00092A7A /* SwifteriOS.framework */; };
+		010986201E65216E00092A7A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109861F1E65216E00092A7A /* Timeline.swift */; };
 		01184EAF1E638C0200A212F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01184EAE1E638C0200A212F0 /* AppDelegate.swift */; };
 		01184EB11E638C0300A212F0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01184EB01E638C0300A212F0 /* RootViewController.swift */; };
 		01184EB31E638C0300A212F0 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01184EB21E638C0300A212F0 /* DataViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		010986191E64AC7700092A7A /* TwitterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterModel.swift; sourceTree = "<group>"; };
 		0109861D1E64B5EA00092A7A /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../../../../Downloads/Swifter-master/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
+		0109861F1E65216E00092A7A /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		01184EAB1E638C0200A212F0 /* TWTRStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTRStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01184EAE1E638C0200A212F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01184EB01E638C0300A212F0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				01184EBB1E638C0300A212F0 /* LaunchScreen.storyboard */,
 				01184EBE1E638C0300A212F0 /* Info.plist */,
 				010986191E64AC7700092A7A /* TwitterModel.swift */,
+				0109861F1E65216E00092A7A /* Timeline.swift */,
 			);
 			path = TWTRStars;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010986201E65216E00092A7A /* Timeline.swift in Sources */,
 				01184EB11E638C0300A212F0 /* RootViewController.swift in Sources */,
 				01184EB51E638C0300A212F0 /* ModelController.swift in Sources */,
 				01184EB31E638C0300A212F0 /* DataViewController.swift in Sources */,

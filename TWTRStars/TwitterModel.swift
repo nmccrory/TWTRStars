@@ -20,14 +20,15 @@ class TwitterModel {
         self.swifter!.postOAuth2BearerToken(success:  {token, response in
             self.bearer = token["access_token"].string
             print(self.bearer)
-            self.getTweetByScreenName(screenName: "realDonaldTrump")
+            self.getTweetByScreenName(screenName: "nickmccrory")
         }, failure: {error in
             print(error)
         })
     }
     
     public func getTweetByScreenName(screenName: String){
-        guard let url = URL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=realDonaldTrump&count=1") else {
+        let str = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" + screenName + "&count=1"
+        guard let url = URL(string: str) else {
             return
         }
         let request = NSMutableURLRequest(url: url)
@@ -38,6 +39,10 @@ class TwitterModel {
         get(request: request, completion: {success, object in
             print("API Request Success: ", success)
             print(object)
+            
+            let data = object as! [Dictionary<String, Any>]
+            let user = data[0]["user"] as! Dictionary<String, Any>
+            print("User: ", user["name"])
         })
     }
     
