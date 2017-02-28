@@ -19,17 +19,17 @@ class TwitterModel {
         // Exchange Consumer Credentials for Bearer token
         self.swifter!.postOAuth2BearerToken(success:  {token, response in
             self.bearer = token["access_token"].string
-            print(self.bearer)
-            self.getTweetByScreenName(screenName: "nickmccrory")
+            let tweet = self.getTweetByScreenName(screenName: "realDonaldTrump")
         }, failure: {error in
             print(error)
         })
     }
     
-    public func getTweetByScreenName(screenName: String){
+    public func getTweetByScreenName(screenName: String) -> Timeline? {
+        var tl: Timeline?
         let str = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" + screenName + "&count=1"
         guard let url = URL(string: str) else {
-            return
+            return nil
         }
         let request = NSMutableURLRequest(url: url)
         
@@ -38,17 +38,26 @@ class TwitterModel {
         
         get(request: request, completion: {success, object in
             print("API Request Success: ", success)
-            print(object)
             
             let data = object as! [Dictionary<String, Any>]
             let user = data[0]["user"] as! Dictionary<String, Any>
-            print("User: ", user["name"])
+            let favorites = data[0]["favorite_count"] as! Int
+            let retweets = data[0]["retweet_count"] as! Int
+            
+            if data != nil {
+                tl = Timeline(screenName: user["screen_name"] as! String, name: user["name"] as! String, profileImage: user["profile_image_url_https"] as! String, tweet: data[0]["text"] as! String, favoriteCount: favorites, retweetCount: retweets, createdAt: data[0]["created_at"] as! String)
+                print(tl?.favoriteCount)
+                print(tl?.retweetCount)
+                print(tl?.screenName)
+                print(tl?.name)
+                print(tl?.profileImage)
+                print(tl?.tweet)
+                print(tl?.createdAt)
+            }
         })
+        return tl
     }
     
-    private func encodeConsumerKeyAndSecret() {
-        
-    }
     
     private func dataTask(request: NSMutableURLRequest, method: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         request.httpMethod = method
